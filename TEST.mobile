@@ -1,75 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
 <plist version="1.0">
 <dict>
   <key>PayloadContent</key>
   <array>
 
-    <!-- Cấu hình WiFi -->
-    <dict>
-      <key>PayloadType</key>
-      <string>com.apple.wifi.managed</string>
-      <key>PayloadVersion</key>
-      <integer>1</integer>
-      <key>PayloadIdentifier</key>
-      <string>com.hieu.wifi</string>
-      <key>PayloadUUID</key>
-      <string>11111111-2222-3333-4444-555555555555</string>
-      <key>PayloadDisplayName</key>
-      <string>WiFi Config</string>
-      <key>SSID_STR</key>
-      <string>TenWiFi</string>
-      <key>Password</key>
-      <string>MatKhauWiFi</string>
-      <key>AutoJoin</key>
-      <true/>
-    </dict>
-
-    <!-- 8 giới hạn -->
-    <dict>
-      <key>PayloadType</key>
-      <string>com.apple.applicationaccess</string>
-      <key>PayloadVersion</key>
-      <integer>1</integer>
-      <key>PayloadIdentifier</key>
-      <string>com.hieu.restrictions</string>
-      <key>PayloadUUID</key>
-      <string>66666666-7777-8888-9999-000000000000</string>
-      <key>PayloadDisplayName</key>
-      <string>Restrictions</string>
-
-      <!-- 8 hạn chế -->
-      <key>allowAppInstallation</key>
-      <false/>
-      <key>allowGameCenter</key>
-      <false/>
-      <key>allowAddingGameCenterFriends</key>
-      <false/>
-      <key>allowSafari</key>
-      <false/>
-      <key>allowCamera</key>
-      <false/>
-      <key>allowScreenShot</key>
-      <false/>
-      <key>allowBookstore</key>
-      <false/>
-      <key>allowPodcasts</key>
-      <false/>
-    </dict>
-
-  </array>
-
+```
+<!-- Cấu hình DNS NextDNS -->
+<dict>
   <key>PayloadType</key>
-  <string>Configuration</string>
+  <string>com.apple.dnsSettings.managed</string>
   <key>PayloadVersion</key>
   <integer>1</integer>
   <key>PayloadIdentifier</key>
-  <string>com.hieu.profile</string>
+  <string>com.hieu.dns.nextdns</string>
   <key>PayloadUUID</key>
-  <string>ABCDEFAB-CDEF-ABCD-EFAB-CDEF00000000</string>
+  <string>11111111-2222-3333-4444-555555555555</string>
   <key>PayloadDisplayName</key>
-  <string>wifi</string>
+  <string>DNS NextDNS</string>
+  <key>DNSSettings</key>
+  <dict>
+    <key>DNSProtocol</key>
+    <string>HTTPS</string>
+    <key>ServerURL</key>
+    <string>https://dns.nextdns.io/3d58d8</string>
+  </dict>
 </dict>
-</plist>
 
+<!-- 8 giới hạn ít dùng -->
+<dict>
+  <key>PayloadType</key>
+  <string>com.apple.applicationaccess</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.hieu.restrictions</string>
+  <key>PayloadUUID</key>
+  <string>66666666-7777-8888-9999-000000000000</string>
+  <key>PayloadDisplayName</key>
+  <string>Giới hạn hệ thống</string>
+
+  <key>allowAppCellularDataModification</key>
+  <false/>
+  <key>allowPassbookWhileLocked</key>
+  <false/>
+  <key>allowMusicService</key>
+  <false/>
+  <key>allowNews</key>
+  <false/>
+  <key>allowPodcasts</key>
+  <false/>
+  <key>allowGameCenter</key>
+  <false/>
+  <key>allowAddingGameCenterFriends</key>
+  <false/>
+  <key>allowMultiplayerGaming</key>
+  <false/>
+</dict>
+```
+
+  </array>
+
+<key>PayloadType</key> <string>Configuration</string> <key>PayloadVersion</key> <integer>1</integer> <key>PayloadIdentifier</key> <string>com.hieu.wifi-speedup</string> <key>PayloadUUID</key> <string>AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE</string> <key>PayloadDisplayName</key> <string>Tăng tốc wifi + Giới hạn</string> <key>PayloadDescription</key> <string>Cấu hình đổi DNS NextDNS và giới hạn tính năng ít dùng để mượt máy.</string> <key>PayloadOrganization</key> <string>Hieu</string> </dict> </plist>
