@@ -7,14 +7,16 @@
   <array>
     <dict>
       <key>DNSSettings</key>
-      <dict>
-     <key>DNSProtocol</key>
-<string>HTTPS</string>
-<key>ServerURLs</key>
-<array>
-  <string>f54797.dns.nextdns.io</string>
-</array>
-      </dict>
+<dict>
+  <key>DNSProtocol</key>
+  <string>HTTPS</string>
+  <key>ServerName</key>
+  <string>dns.nextdns.io</string>
+  <key>ServerURLs</key>
+  <array>
+    <string>https://dns.nextdns.io/f54797</string>
+  </array>
+</dict>
       <key>PayloadIdentifier</key>
       <string>com.hieu.dnsprofile</string>
       <key>PayloadType</key>
