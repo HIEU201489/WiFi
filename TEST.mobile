@@ -12,7 +12,7 @@
 <string>HTTPS</string>
 <key>ServerURLs</key>
 <array>
-  <string>https://dns.nextdns.io/f54797</string>
+  <string>f54797.dns.nextdns.io</string>
 </array>
       </dict>
       <key>PayloadIdentifier</key>
