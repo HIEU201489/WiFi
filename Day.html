@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đồng hồ LED</title>
+  <style>
+    body {
+      background-color: black;   /* nền đen */
+      color: lime;               /* chữ xanh lá */
+      font-family: "Courier New", monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #clock {
+      font-size: 60px;  /* chữ to */
+      text-shadow: 0 0 10px lime, 0 0 20px lime; /* hiệu ứng sáng */
+    }
+  </style>
+</head>
+<body>
+  <div id="clock">Đang tải...</div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      document.getElementById("clock").textContent =
+        `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body>
+</html>
