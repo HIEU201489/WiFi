@@ -2,40 +2,48 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đồng hồ LED</title>
   <style>
     body {
-      background-color: black;   /* nền đen */
-      color: lime;               /* chữ xanh lá */
+      background: black;
+      color: lime;
       font-family: "Courier New", monospace;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
     }
     #clock {
-      font-size: 60px;  /* chữ to */
-      text-shadow: 0 0 10px lime, 0 0 20px lime; /* hiệu ứng sáng */
+      font-size: 80px;
+      text-shadow: 0 0 15px lime, 0 0 30px lime;
+    }
+    #date {
+      font-size: 30px;
+      margin-top: 15px;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc;
     }
   </style>
 </head>
 <body>
-  <div id="clock">Đang tải...</div>
+  <div id="clock">00:00:00</div>
+  <div id="date">--/--/----</div>
 
   <script>
     function updateClock() {
       const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
       const day = String(now.getDate()).padStart(2, '0');
       const month = String(now.getMonth() + 1).padStart(2, '0');
       const year = now.getFullYear();
 
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-
-      document.getElementById("clock").textContent =
-        `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+      document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+      document.getElementById("date").textContent = `${day}/${month}/${year}`;
     }
 
     setInterval(updateClock, 1000);
